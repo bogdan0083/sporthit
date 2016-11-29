@@ -1,5 +1,8 @@
 html
     box-sizing border-box
+    font-size: 13px
+    +above($screen-sm)
+        font-size: 14px
 *, *:before, *:after
     box-sizing inherit
 
@@ -9,8 +12,8 @@ html
 body
     color black
     font-size 1rem
-    font-family 'Roboto', sans-serif
-    font-weight 400
+    font-family 'Museo Sans', sans-serif
+    font-weight 300
 
 a
     text-decoration underline
@@ -19,6 +22,14 @@ a
     &:hover
         color black
         text-decoration none
+
+
+.page-wrapper
+    overflow: hidden
+    position: relative
+
+address
+    font-style: normal
 
 .icon
     display inline-block
@@ -164,9 +175,13 @@ img
     width: 3.635em;
     height: 3.635em;
 }
+
+.icon-buildings, .icon-house-plans, .icon-store, .icon-ski {
+    fill: white
+}
 .icon-buildings {
-    width: 18.164em;
-    height: 18.164em;
+    width: 40px;
+    height: 40px;
 }
 .icon-chat {
     width: 32em;
@@ -181,24 +196,29 @@ img
     height: 10.875em;
 }
 .icon-left-arrow {
-    width: 24.141em;
-    height: 24.141em;
+    width: 35px;
+    height: 35px;
+    fill: #124f9d;
+    transition: all 0.3s
 }
 .icon-placeholder {
-    width: 32em;
-    height: 32em;
+    width: 24px;
+    height: 28px;
+    fill: #ffbe22;
 }
 .icon-right-arrow {
-    width: 24.141em;
-    height: 24.141em;
+    width: 35px;
+    height: 35px;
+    fill: #124f9d;
+    transition: all 0.3s
 }
 .icon-ski {
     width: 32em;
     height: 32em;
 }
 .icon-smartphone {
-    width: 14px;
-    height: 22px;
+    width: 24px;
+    height: 30px;
     fill: #ffb80f;
 
 }
@@ -207,8 +227,10 @@ img
     height: 3.75em;
 }
 .icon-tag {
-    width: 32em;
-    height: 32em;
+    width: 19px;
+    height: 19px;
+    fill: #1c56a0;
+    vertical-align: middle
 }
 .icon-user {
     width: 32em;

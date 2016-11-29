@@ -1,3 +1,67 @@
 .header
-  margin-right: 10px
-  margin-top: 10px
+	padding-top: 10px
+	text-align: center
+	position: relative
+	padding-bottom: 20px
+	box-shadow 5px 0 20px 0 rgba(black, 0.2)
+	background-color: #fff
+	+above($screen-sm)
+		text-align: left
+		height: 140px
+	.logo
+		max-width: 30%
+		display: block
+		margin: 0 auto
+		width: 100%
+		+above($screen-sm)
+			position: absolute
+			left 50%
+			margin-left -85px
+			max-width: 150px
+			top 30px
+		+above($screen-md)
+			max-width 100%
+			margin-left:-133px
+			top 10px
+	.contact-block
+		+above($screen-sm)
+			float: right
+	.desc
+		color #1c56a0
+		font-size 1.2rem
+		margin-top: 8px
+		margin-bottom: 6px
+		+above($screen-sm)
+			font-size: 1.2rem
+			margin-top: 26px
+			line-height: 1.4
+			text-transform: uppercase
+			float: left
+		+above($screen-md)
+			font-size: 1.5rem
+			margin-top: 12px
+.address-block, .phone-block
+	position: relative
+	text-align: center
+	padding-top: 10px
+	padding-bottom: 10px
+	font-size: 1.2rem
+	margin: 0 auto
+	max-width: 290px
+	vertical-align: middle
+	+above($screen-sm)
+		padding-left: 40px
+		text-align: left
+		max-width  none
+	svg
+		position: absolute
+		left 10px
+		top 50%
+		transform translate(-50%, -50%)
+		display: none
+		+above($screen-sm)
+			display: block
+
+.address-block
+	+above($screen-md)
+		font-size 1.5rem
