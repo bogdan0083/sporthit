@@ -1,0 +1,86 @@
+.footer
+
+	background-color: #1c56a0
+	max-width: 1070px
+	margin: 0 auto
+	margin-top: 80px
+	margin-bottom: 30px
+	color white
+	text-align: center
+	font-size 0.857rem
+	padding-top: 10px
+	padding-bottom: 10px
+	+above($screen-sm)
+		padding-top: 0
+		padding-bottom: 0
+	+above($screen-md)
+		padding-left: 75px
+		padding-right: 75px
+		position: relative
+		&:before, &:after
+			content ''
+			width: 3px
+			background-color: #ffb400
+			height: 120px
+			position: absolute
+			left: 40px
+			transform rotate(30deg)
+			top 50%
+			margin-top: -60px
+		&:after
+			left: auto
+			right 40px
+	.made-by
+		font-size: 1rem
+		+above($screen-sm)
+			float: right
+			text-align: right
+			margin-top: 24px
+	.cherry-link
+		padding-left: 20px
+		position: relative
+		text-transform: uppercase
+		color #ffb400
+		font-size 0.786rem
+		text-decoration: none
+		&:before
+			content ''
+			width: 13px
+			height: 13px
+			background url(../images/cherry.png) no-repeat center
+			position: absolute
+			left: 0
+			top 0
+	.copyright-block
+		margin-bottom: 10px
+		line-height: 1.5
+		+above($screen-sm)
+			margin-left: 24px
+			margin-bottom: 0
+			.copy
+				margin-top: 12px
+	+above($screen-sm)
+		text-align: left
+		height: 89px
+	.address-block, .phone-block
+		font-size 0.857rem
+		padding 6px 0 6px 34px
+		line-height: 1.5
+		margin: 0
+	.copyright-block
+		+above($screen-sm)
+			display: inline-block
+			vertical-align: middle
+			margin-top: 3px
+	.contact-block, .logo
+		display: none
+		+above($screen-sm)
+			display: inline-block
+			vertical-align: middle
+	.logo
+		+above($screen-sm)
+			margin-top: 12px
+	.contact-block
+		margin-left: 40px
+		+above($screen-md)
+			margin-left: 100px

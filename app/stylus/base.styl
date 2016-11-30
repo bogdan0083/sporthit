@@ -20,7 +20,6 @@ a
     color inherit
     transition all 0.3s
     &:hover
-        color black
         text-decoration none
 
 
@@ -148,15 +147,114 @@ img
         color white
 
 
+.btn
+    position: relative
+    background-color: #ffb400
+    display: block
+    width: 270px
+    height: 40px
+    text-decoration: none
+    text-transform: uppercase
+    color white
+    font-weight: 500
+    line-height: 40px
+    margin: 0 auto
+    text-align: center
+    &:hover > div:before
+        transform none
+    &:hover:before
+        border-color: transparent #1c56a0 transparent transparent;
+    &:hover:after
+        border-color: #1c56a0 transparent transparent transparent;
+    > div
+        height: 100%
+        overflow: hidden
+        position: relative
+        span
+            position: relative
+            z-index: 1
+        &:before
+            content ''
+            background-color: #1c56a0
+            position: absolute
+            width: 100%
+            height: 100%
+            left: 0
+            top: 0
+            transition all 0.3s
+            transform translateY(100%)
+    &:before
+        content ''
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 6px 13px 0;
+        border-color: transparent #d78100 transparent transparent;
+        position: absolute
+        left -6px
+        bottom 0
+        transition all 0.3s
+    &:after
+        content ''
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 13px 6px 0 0;
+        border-color: #d78100 transparent transparent transparent;
+        position: absolute
+        right -6px
+        bottom 0
+        transition all 0.3s
+
+.btn-secondary
+    display: block
+    background-color: #1c56a0
+    height: 40px
+    line-height: 40px
+    text-transform: uppercase
+    text-decoration: none
+    text-align: center
+    margin 4px 0
+    color #ffb400
+    position: relative
+    z-index: 2
+    width: 120px
+    padding: 0
+    font-size 0.857rem
+    border none
+    overflow: hidden
+    span
+        position: relative
+        z-index: 1
+    &:hover:before, &.active:before
+        transform translateX(50%) skew(-10deg)
+        opacity: 1
+    &:before
+        content ''
+        width: 100%
+        background: rgba(white, 0.4)
+        height: 100%
+        transform translateX(100%) skew(-10deg)
+        transition all 0.3s
+        position: absolute
+        opacity: 0
+        right: 0
+        top: 0
 .field
     height: 40px
     display: block
     width: 100%
     padding-left: 20px
     padding-right: 20px
-    margin: 0 auto
+    margin: 10px auto
     background-color: #fdfcfc
-    border: 1px solid #dfdfdf
+    border: 1px solid #ccc
+    &::placeholder
+        color #666
+    &-required
+        border-color #1c56a0
+        &::placeholder
+            color #1c56a0
     &-text
         resize none
         height: 100px
@@ -164,6 +262,12 @@ img
     &:focus
         border-color: gray
         outline none
+    &-name
+        background: url(../images/user.png) no-repeat right 14px center
+    &-tel
+        background: url(../images/phone.png) no-repeat right 16px center
+    &-text
+        background: url(../images/speech.png) no-repeat right 12px top 10px
 
 .fadeInUp
     animation fadeInUp
@@ -172,8 +276,10 @@ img
     animation-fill-mode both
 
 .icon-alarm-clock {
-    width: 3.635em;
-    height: 3.635em;
+    width: 20px;
+    height: 20px;
+    fill: #f59706;
+    stroke-width 2px;
 }
 
 .icon-buildings, .icon-house-plans, .icon-store, .icon-ski {
@@ -188,8 +294,9 @@ img
     height: 32em;
 }
 .icon-cross {
-    width: 5.933em;
-    height: 5.933em;
+    width: 10px;
+    height: 10px;
+    fill white
 }
 .icon-house-plans {
     width: 10.875em;
@@ -225,14 +332,53 @@ img
 .icon-store {
     width: 3.75em;
     height: 3.75em;
+    fill: white;
 }
 .icon-tag {
     width: 19px;
     height: 19px;
     fill: #1c56a0;
-    vertical-align: middle
 }
 .icon-user {
     width: 32em;
     height: 32em;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.animated {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }

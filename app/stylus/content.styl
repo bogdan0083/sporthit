@@ -13,7 +13,7 @@
 		display: table
 		width: 100%
 		position: relative
-		&:before, &:after
+		&:before
 			content ''
 			width: 1200px
 			top -200px
@@ -21,10 +21,10 @@
 			height: 764px
 			background url(../images/blur1.png) no-repeat center / 100% 100%
 			position: absolute
-			opacity: 0.4
+			opacity: 0.8
 			transform translateX(-50%)
 			+above($screen-sm)
-				opacity: 0.8
+				opacity: 1
 				top -100px
 	.slide-content
 		display: table-cell
@@ -116,7 +116,6 @@
 		font-weight: 300
 		text-align: center
 		text-transform: uppercase
-
 		+above($screen-sm)
 			font-size 2.143rem
 		span
@@ -125,7 +124,6 @@
 			z-index: 1
 			padding 0 20px
 			max-width 640px
-			width: 100%
 			background-color: #1c56a0
 	.section-icon
 		display: none
@@ -153,16 +151,41 @@
 	background url(../images/pattern.jpg) center
 	&-group
 		padding 20px 0
-		
+
+.row-items
+	text-align: center
+	margin-right: -24px
 .product-item
-
-
 	transition all 0.3s
 	z-index: 2
 	width: 232px
 	min-height: 326px
 	text-align: center
 	margin 20px 20px
+	position: relative
+	display: inline-block
+	vertical-align: top
+	.special-label
+		text-transform: uppercase
+		color #f90
+		font-size: 0.9rem
+		top 6px
+		left 10px
+		position: absolute
+		z-index: 2
+		font-weight: 500
+	&-special
+		&:before
+			content ''
+			border-style: solid;
+			border-width: 36px 36px 0 0;
+			border-color: #1c57a9 transparent transparent transparent;
+			height: 0
+			width: 0
+			position: absolute
+			left: 0
+			top: 0
+			z-index: 1
 	.img-link
 		display: block
 		height: 168px
@@ -171,8 +194,14 @@
 		border 1px solid #e8e8e8
 		border-bottom: 0
 		img
-			max-width: 100%
-			max-height: 100%
+			max-width: 85%
+			max-height: 85%
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			left: 0
+			margin: auto
 	.item-name
 		display: block
 		padding-top: 34px
@@ -192,7 +221,10 @@
 			position: absolute
 			left 8px
 			top 20px
+			transition all 0.3s
 	&:hover
+		.item-name:after
+			border-color #b89632
 		.img-link
 			box-shadow 0 0 15px 0 rgba(black, 0.2)
 	.price
@@ -200,3 +232,322 @@
 		line-height: 58px
 		font-size 1.5rem
 		font-weight: 500
+		color #1c56a0
+		svg
+			display: inline-block
+			margin-right: 4px
+			vertical-align: middle
+		span
+			display: inline-block
+			vertical-align: middle
+
+.features-group
+	clearfix()
+	padding 20px 0
+	.feature
+		width: 50%
+		float: left
+		position: relative
+		margin 30px 0
+		+above($screen-sm)
+			width: 33.3333%
+		.bottom
+			position: absolute
+			width: 100%
+			bottom -9px
+		.feature-caption
+			width: 90%
+			text-align: center
+			background-color: #1a4f93
+			color white
+			height: 40px
+			+above($screen-sm)
+				height: 85px
+			margin: 0 auto
+			display: table
+			position: relative
+			&:before
+				content ''
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 6px 13px 0;
+				border-color: transparent #143d70 transparent transparent;
+				position: absolute
+				left -6px
+				bottom 0
+			&:after
+				content ''
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 13px 6px 0 0;
+				border-color: #143d70 transparent transparent transparent;
+				position: absolute
+				right -6px
+				bottom 0
+			span
+				display: table-cell
+				font-size: 0.9rem
+				text-transform: uppercase
+				vertical-align: middle
+				line-height: 1.5
+				font-weight: 500
+				+above($screen-sm)
+					font-size 1.286rem
+		img
+			width: 100%
+			display: block
+
+.rent-offer
+	.btn
+		margin-top: -28px
+	&-inner
+		position: relative
+		text-align: center
+		padding 20px 0 40px
+		overflow: hidden
+		color #1c56a0
+		+above($screen-sm)
+			height: 458px
+			padding-top: 90px
+		.container
+			position: relative
+			z-index: 1
+		h2, h3
+			font-weight: 500
+		h3
+			+above($screen-sm)
+				font-size: 1.7rem
+				line-height: 1.5
+				text-transform: uppercase
+				position: relative
+				margin-bottom: 0
+				padding-bottom: 30px
+				&:before
+					content ''
+					background-color: #ffb400
+					width: 350px
+					left 50%
+					bottom 0
+					margin-left: -175px
+					height: 2px
+					position: absolute
+		h2
+			line-height: 1.25
+			font-weight: 400
+			text-transform: uppercase
+			margin-top: 20px
+			+above($screen-sm)
+				font-size 3.429rem
+		&:before
+			content ''
+			width: 1200px
+			top -200px
+			left: 50%
+			height: 764px
+			background url(../images/blur1.png) no-repeat center / 100% 100%
+			position: absolute
+			opacity: 0.8
+			transform translateX(-50%)
+			+above($screen-sm)
+				opacity: 0.8
+				top -100px
+
+
+.contact-section
+	margin-top: 40px
+	position: relative
+	.container
+		padding-top: 100px
+	.contact-info
+		background-color: #1b549d
+		padding 20px
+		z-index: 2
+		position: relative
+		color white
+		max-width: 256px
+		margin: 0 auto -12px
+		+above($screen-sm)
+			float: right
+		&-block
+			position: relative
+			font-size 0.857rem
+			margin 10px 0
+			line-height 1.5
+			padding-left: 35px
+			svg
+				position: absolute
+				left 14px
+				top 50%
+				transform translate(-50%, -50%)
+		&:before
+			content ''
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 6px 13px 0;
+			border-color: transparent #143d70 transparent transparent;
+			position: absolute
+			left -6px
+			bottom 0
+		&:after
+			content ''
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 13px 6px 0 0;
+			border-color: #143d70 transparent transparent transparent;
+			position: absolute
+			right -6px
+			bottom 0
+		.heading
+			color #ffb400
+			text-transform: uppercase
+			font-size: 1.286rem
+			margin-top: 0
+	#map
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-color: lightgray
+
+
+
+.svg-hover > g
+	opacity: 0
+	transition all 0.3s
+	transform-style preserve-3d
+	transform translateZ(1px)
+	&:hover
+		opacity: 1
+		transform rotateX(1deg) translateZ(100px)
+		backface-visibility hidden
+
+.scheme-slider
+	position: relative
+	padding 100px 100px 200px 0
+	.slick-list
+		overflow: visible
+
+.scheme
+	perspective 250px
+
+.scheme
+	display: block
+	svg
+		box-shadow 0 0 10px 0 rgba(black, 0.2)
+		transform rotateX(10deg) rotateZ(-11deg) translateZ(0) scale(1)
+		transform-style preserve-3d
+		backface-visibility hidden
+	text
+		font-family: 'Museo Sans', sans-serif !important
+		font-weight: 5px !important
+.svg-digits
+	pointer-events none
+
+.schemes
+	display: none
+	+above($screen-sm)
+		display: block
+	.container
+		position: relative
+.floor-selection
+	position: absolute
+	right 0
+	top 40px
+	width: 135px
+	padding-top: 50px
+	&:before
+		content ''
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 67.5px 50px 67.5px;
+		border-color: transparent transparent #ffb400 transparent;
+		position: absolute
+		top 0
+		left: 0
+	a
+		display: block
+		background-color: #1c56a0
+		height: 40px
+		line-height: 40px
+		font-size 1.286rem
+		text-transform: uppercase
+		text-decoration: none
+		text-align: center
+		width: 100%
+		margin 4px 0
+		color #ffb400
+		position: relative
+		z-index: 2
+
+.tooltip
+	position: fixed
+	pointer-events none
+
+.popup-close
+	position: absolute
+	right 10px
+	top 6px
+	z-index: 1
+.callback-popup
+	width: 280px
+	position: relative
+	display: none
+	h2
+		background-color: #1c56a0
+		color #ffb400
+		font-weight: 300
+		text-align: center
+		text-transform: uppercase
+		display: table
+		width: 100%
+		height: 80px
+		position: relative
+		+above($screen-sm)
+			font-size 2.143rem
+			height: 110px
+			&:before, &:after
+				content ''
+				position: absolute
+				background-color: #6a8db9
+				top 50%
+				width: 50px
+				left 30px
+				height: 1px
+			&:after
+				left: auto
+				right 30px
+		span
+			display: table-cell
+			vertical-align: middle
+			position: relative
+	.bottom
+		text-align: center
+		font-size: 0.857rem
+		padding-top: 10px
+		.colored-blue
+			margin-top: 10px
+		.btn-secondary
+			margin: 10px auto
+		+above($screen-sm)
+			text-align: left
+			clearfix()
+			.wrap
+				float: left
+			.btn-secondary
+				float: right
+				margin: auto
+	form
+		padding 10px 10px 10px
+	+above($screen-sm)
+		width: 500px
+		form
+			padding 10px 30px 20px
+
+.colored-blue
+	color #1c56a0
